@@ -27,11 +27,11 @@ function Solutions() {
                     </a>
                 </div>
                 {/* Solutions Buttons */}
-                <div className="flex md:w-[600px]  gap-4 items-center flex-wrap">
+                <div className="flex w-[400px] md:w-[800px]  gap-5 items-center flex-wrap">
                     {solutions.map((solution, index) => (
                         <p
                             key={index}
-                            className="bg-gray-100 text-gray-700 font-medium text-sm sm:text-base py-1 px-2 border  rounded-lg hover:bg-gray-200 transition inline-block"
+                            className="bg-gray-200 bg-opacity-40 text-[#737475] font-semibold text-lg leading-[44px] sm:text-base py-1 px-2 border  rounded-lg hover:bg-gray-200 transition inline-block"
                         >
                             {solution}
                         </p>
@@ -70,11 +70,11 @@ function IndustryExpertise() {
                     </a>
                 </div>
                 {/* Solutions Buttons */}
-                <div className="flex md:w-[600px]  gap-4 items-center flex-wrap">
+                <div className="flex w-[400px]  md:w-[800px]  gap-4 items-center flex-wrap">
                     {solutions.map((solution, index) => (
                         <p
                             key={index}
-                            className="bg-gray-100 text-gray-700 font-medium text-sm sm:text-base py-1 px-2 border  rounded-lg hover:bg-gray-200 transition inline-block"
+                            className="bg-gray-200 bg-opacity-40 text-[#737475] font-semibold text-[16px] leading-[44px] sm:text-base py-1 px-2 border  rounded-md hover:bg-gray-200 transition inline-block"
                         >
                             {solution}
                         </p>
@@ -106,8 +106,8 @@ export default function CategoryList() {
 
             <div>
                 <div className="max-w-5xl mx-4 lg:mx-auto mt-12 mb-4">
-                    <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-600 border-b-2 border-slate-300 pb-2 mb-4 sm:mb-2 w-full sm:w-full">
-                        Industries We <span className=" font-bold text-[#01331A]">Serve</span>
+                    <h2 className="text-2xl md:text-3xl leading-9  font-semibold  text-[#373A40] border-b-2 border-slate-300 pb-2 mb-4 sm:mb-2 w-full sm:w-full">
+                        Industries We <span className=" font-bold text-2xl md:text-3xl leading-9 text-[#01331A]">Serve</span>
                     </h2>
 
                 </div>
@@ -119,7 +119,7 @@ export default function CategoryList() {
                                 className="flex gap-6 md:gap-2  items-center justify-between py-4 space-y-4 sm:space-y-0"
                             >
                                 <div className="">
-                                    <h2 className="text-lg font-semibold border-b-2 border-slate-300 pb-2 mb-4 sm:mb-2 w-full sm:w-80">
+                                    <h2 className=" leading-6 text-xl font-semibold border-b-2 border-slate-300 pb-3 mb-5 sm:mb-3 w-full sm:w-80">
                                         {category.title}
                                     </h2>
                                     <p className="text-sm text-gray-400 ">{category.description}</p>
@@ -131,7 +131,7 @@ export default function CategoryList() {
                                         viewBox="0 0 24 24"
                                         strokeWidth={1.5}
                                         stroke="currentColor"
-                                        className="w-6 h-6 text-gray-600 hover:text-green-600 transition-transform transform hover:translate-x-1 mt-8 md:mt-4 lg:mt-2"
+                                        className="w-8 h-8  text-[#01331A] hover:text-green-600 transition-transform transform hover:translate-x-1 mt-8 md:mt-4 lg:mt-2"
                                     >
                                         <path
                                             strokeLinecap="round"

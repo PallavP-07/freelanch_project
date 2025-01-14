@@ -41,13 +41,13 @@ export default function CustomNavbar() {
 
         {/* Navigation Menu */}
         <NavigationMenu>
-          <NavigationMenuList className="hidden lg:flex space-x-6">
+          <NavigationMenuList className="hidden lg:flex space-x-2">
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
-                    "hover:font-semibold hover:text-white",
-                    isScrolled && "hover:text-black hover:font-semibold "
+                    "hover:font-semibold hover:text-white font-normal text-[16px]",
+                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px]"
                   )}
                 >
                   About
@@ -55,7 +55,10 @@ export default function CustomNavbar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent hover:text-black hover:font-semibold">
+              <NavigationMenuTrigger    className={cn(
+                    "bg-transparent font-normal  text-[16px] hover:bg-transparent hover:text-white hover:font-semibold  hover:text-[16px]",
+                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px] "
+                  )} >
                 Solutions
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -70,7 +73,10 @@ export default function CustomNavbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-transparent hover:bg-transparent hover:text-black hover:font-semibold">
+              <NavigationMenuTrigger className={cn(
+                    "bg-transparent font-normal  text-[16px] hover:bg-transparent hover:text-white hover:font-semibold  hover:text-[16px]",
+                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px] "
+                  )}>
                 Expertise
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -88,8 +94,8 @@ export default function CustomNavbar() {
               <Link href="/insights" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
-                    "hover:font-semibold hover:text-white",
-                    isScrolled && "hover:text-black hover:font-semibold "
+                    "hover:font-semibold hover:text-white font-normal  text-[16px]",
+                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px] "
                   )}
                 >
                   Insights
@@ -104,19 +110,19 @@ export default function CustomNavbar() {
           <Link href="/contact" legacyBehavior>
             <a
               className={cn(
-                "px-4 py-1 rounded-3xl border-2 hover:bg-green-500",
+                "px-5 py-3 rounded-[60px] border-2 hover:bg-green-200 hover:text-black tracking-[1px] font-medium leading-5",
                 isScrolled
                   ? "bg-transparent text-black border-gray-700"
-                  : "bg-gray-300 border-white"
+                  : "bg-gray-400 bg-opacity-10  border-white"
               )}
             >
-              Browse Job
+              Browse Jobs
             </a>
           </Link>
           <Link href="/contact" legacyBehavior>
             <a
               className={cn(
-                "px-3 py-1 rounded-3xl hover:bg-green-500",
+                "px-5 py-3 rounded-3xl hover:bg-green-500 tracking-[1px] font-semibold leading-5",
                 isScrolled ? "bg-[#026534] text-white" : "bg-[#026534] text-white"
               )}
             >

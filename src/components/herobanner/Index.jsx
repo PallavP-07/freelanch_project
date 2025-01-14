@@ -5,7 +5,7 @@ const HeroBanner = () => {
   return (
     <>
       <NavigationMenuDemo />
-      <div className="relative w-full h-[50vh] md:h-[40vh] lg:h-[75vh]">
+      <div className="relative w-full h-[60vh] md:h-[40vh] lg:h-[75vh]">
 
         <Image
           className="w-full h-100 object-contain"
@@ -16,15 +16,15 @@ const HeroBanner = () => {
         />
 
 
-        <div className="bg-gradient-to-r from-neutral-500 via-black opacity-90 to-neutral-500 absolute inset-0 flex items-center justify-center text-white text-center">
-          <div className="flex flex-wrap w-[700px] p-3 sm:w-[600px] md:w-[700px]  xl:w-[800px] flex-col items-center justify-center">
+        <div className="bg-gradient-to-r  from-zinc-600 via-black opacity-90 to-zinc-600 absolute inset-0 flex items-center justify-center text-white text-center">
+          <div className="flex flex-wrap w-[600px] p-3 sm:w-[600px] md:w-[700px]  xl:w-[800px] flex-col items-center justify-center">
 
-            <h1 className="border-b-2 tracking-widest border-white w-full pb-2 text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="border-b font-normal tracking-[5px] border-white w-full pb-8 text-[55px] md:text-[76px] leading-[65px] sm:text-3xl md:text-4xl ">
               Functions
             </h1>
 
 
-            <span className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] text-wrap text-center mt-4">
+            <span className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[16px] xl:text-[16px] font-light leading-6 text-wrap text-center mt-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos, maiores,
               incidunt ipsam dolor alias architecto ea quis magnam amet natus voluptatem autem quae,
               tempora id. Nostrum dolorum nihil tenetur iusto.

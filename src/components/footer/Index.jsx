@@ -1,10 +1,9 @@
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 const renderSocialContent = () => {
   return (
     <div className="flex justify-between items-center gap-3">
-      <Image src='/fb.svg' alt='fb-logo' width={30} height={30} />
+      <Image src='/fb.svg' alt='fb-logo' width={30} height={30} className="text-[#01331A]" />
       <Image src='/tw.svg' alt='tw-logo' width={30} height={30} />
       <Image src='/linkedin.svg' alt='linkedin-logo' width={30} height={30} />
     </div>
@@ -14,8 +13,8 @@ const renderSocialContent = () => {
 const renderMobileFooter = () => {
   return (
     <div className="flex flex-col justify-center items-center">
-      <Image src='/Logo-2.svg' alt="logo" width={200} height={200} />
-      <div className="flex flex-wrap justify-center items-center gap-3 w-70 md:w-[46%] p-2 text-gray-400 my-4">
+      <Image src='/Logo-2.svg' alt="logo" width={240} height={240} />
+      <div className="flex flex-wrap justify-center items-center md:gap-5 w-70 md:w-[45%] p-2 text-gray-400 my-4">
       <p>Home</p>
       <p>About</p>
       <p>Solutions</p>
@@ -36,7 +35,7 @@ const renderDesktopFooter = () => {
     <>
       <div className="flex max-w-5xl items-center border-b-2 border-gray-400 mb-8 mx-auto py-4 justify-between">
         <div>
-          <Image src='/Logo.svg' alt="logo" width={200} height={200} />
+          <Image src='/Logo.svg' alt="logo" width={150} height={150} />
         </div>
         <div className="flex">
           {renderSocialContent()}
@@ -45,7 +44,7 @@ const renderDesktopFooter = () => {
       <div className="max-w-5xl mx-auto lg:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
         {/* Home Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-green-800">Home</h3>
+          <h3 className="text-xl leading-8 font-bold mb-4 text-[#01331A]">Home</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-gray-600 hover:text-green-800">Search Jobs</a></li>
             <li><a href="#" className="text-gray-600 hover:text-green-800">Success Rates</a></li>
@@ -58,7 +57,7 @@ const renderDesktopFooter = () => {
 
         {/* About Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-green-800">About</h3>
+          <h3 className="text-xl leading-8 font-bold mb-4 text-[#01331A]">About</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-gray-600 hover:text-green-800">About</a></li>
             <li><a href="#" className="text-gray-600 hover:text-green-800">Background</a></li>
@@ -69,7 +68,7 @@ const renderDesktopFooter = () => {
 
         {/* Solutions Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-green-800">Solutions</h3>
+          <h3 className="text-xl leading-8 font-bold mb-4 text-[#01331A]">Solutions</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-gray-600 hover:text-green-800">Executive Search</a></li>
             <li><a href="#" className="text-gray-600 hover:text-green-800">Professional Search</a></li>
@@ -81,7 +80,7 @@ const renderDesktopFooter = () => {
 
         {/* Expertise Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-green-800">Expertise</h3>
+          <h3 className="text-xl leading-8 font-bold mb-4 text-[#01331A]">Expertise</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-gray-600 hover:text-green-800">Financial Services</a></li>
             <li><a href="#" className="text-gray-600 hover:text-green-800">Technology</a></li>
@@ -92,7 +91,7 @@ const renderDesktopFooter = () => {
 
         {/* Functions Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-green-800">Functions</h3>
+          <h3 className="text-xl leading-8 font-bold mb-4 text-[#01331A]">Functions</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-gray-600 hover:text-green-800">Legal & Compliance</a></li>
             <li><a href="#" className="text-gray-600 hover:text-green-800">Human Resources</a></li>
@@ -102,7 +101,7 @@ const renderDesktopFooter = () => {
 
         {/* Browse Jobs Section */}
         <div>
-          <h3 className="text-lg font-bold mb-4 text-green-800">Browse Jobs</h3>
+          <h3 className="text-xl leading-8 font-bold mb-4 text-[#01331A]">Browse Jobs</h3>
           <ul className="space-y-2">
             <li><a href="#" className="text-gray-600 hover:text-green-800">Search Jobs</a></li>
             <li><a href="#" className="text-gray-600 hover:text-green-800">Browse Jobs</a></li>
@@ -127,7 +126,7 @@ export default function Footer() {
         {renderDesktopFooter()}
       </div>
 
-      <div className="lg:max-w-5xl lg:mx-auto text-center mt-6 lg:mt-10 text-sm md:mx-[40px]  text-gray-600 border-t-2 border-gray-600  pt-4 lg:pt-8">
+      <div className="lg:max-w-5xl lg:mx-auto text-center mt-6 lg:mt-10 text-sm md:mx-[40px]  text-gray-600 border-t-2 border-gray-300  pt-4 lg:pt-8">
         Copyright © 2024 Magnific | All Rights Reserved
       </div>
     </footer>
