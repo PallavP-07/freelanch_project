@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -16,15 +15,24 @@ import {
 
 export default function CustomNavbar() {
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [openDropdown, setOpenDropdown] = React.useState(null); // Track the open dropdown (null if none)
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      if (window.scrollY > 50 || openDropdown) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [openDropdown]);
+
+  const toggleDropdown = (menu) => {
+    setOpenDropdown(openDropdown === menu ? null : menu);
+  };
 
   return (
     <nav
@@ -42,11 +50,12 @@ export default function CustomNavbar() {
         {/* Navigation Menu */}
         <NavigationMenu>
           <NavigationMenuList className="hidden lg:flex space-x-2">
+            {/* About */}
             <NavigationMenuItem>
               <Link href="/about" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
-                    "hover:font-semibold hover:text-white font-normal text-[16px]",
+                    "hover:font-semibold hover:text-white font-normal text-[16px] pr-4",
                     isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px]"
                   )}
                 >
@@ -54,48 +63,109 @@ export default function CustomNavbar() {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger    className={cn(
-                    "bg-transparent font-normal  text-[16px] hover:bg-transparent hover:text-white hover:font-semibold  hover:text-[16px]",
-                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px] "
-                  )} >
+
+            {/* Solutions Dropdown */}
+            <NavigationMenuItem className="relative group">
+              <a
+                onClick={() => toggleDropdown("solutions")}
+                className={cn(
+                  "bg-transparent flex items-center font-normal text-[16px] hover:bg-transparent cursor-pointer hover:text-white hover:font-semibold",
+                  isScrolled && "hover:text-black hover:font-semibold"
+                )}
+              >
                 Solutions
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 md:w-screen  bg-transparent">
-                  <ListItem href="/solutions/solution1" title="Solution 1">
-                    Description for solution 1.
-                  </ListItem>
-                  <ListItem href="/solutions/solution2" title="Solution 2">
-                    Description for solution 2.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
+                <svg
+                  className="ml-2 w-4 h-4 transform group-hover:rotate-180 transition-all duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              {openDropdown === "solutions" && (
+                <div
+                  className={cn(
+                    "absolute left-[-250px] rounded-b-md top-[55px] w-[1020px] bg-white text-black shadow-lg py-6 px-10"
+                  )}
+                >
+                  <div className="mx-auto max-w-7xl">
+                    <h2 className="text-lg font-medium mb-4">Functions</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
+                      <p>Legal & Compliance</p>
+                      <p>Data Procurement & Supply Chain</p>
+                      <p>Customer Success</p>
+                      <p>Product</p>
+                      <p>Human Resources</p>
+                      <p>Sales</p>
+                      <p>Business Development</p>
+                      <p>Cyber Security</p>
+                      <p>Accounting, Finance & Tax</p>
+                      <p>Marketing</p>
+                      <p>Technology & Engineering</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className={cn(
-                    "bg-transparent font-normal  text-[16px] hover:bg-transparent hover:text-white hover:font-semibold  hover:text-[16px]",
-                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px] "
-                  )}>
+
+            {/* Expertise Dropdown */}
+            <NavigationMenuItem className="relative group">
+              <a
+                onClick={() => toggleDropdown("expertise")}
+                className={cn(
+                  "bg-transparent flex items-center font-normal text-[16px] hover:bg-transparent hover:text-white hover:font-semibold",
+                  isScrolled && "hover:text-black hover:font-semibold"
+                )}
+              >
                 Expertise
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid gap-3 p-4 md:w-screen mt-4">
-                  <ListItem href="/expertise/expertise1" title="Expertise 1">
-                    Description for expertise 1.
-                  </ListItem>
-                  <ListItem href="/expertise/expertise2" title="Expertise 2">
-                    Description for expertise 2.
-                  </ListItem>
-                </ul>
-              </NavigationMenuContent>
+                <svg
+                  className="ml-2 w-4 h-4 transform group-hover:rotate-180 transition-all duration-300"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </a>
+              {openDropdown === "expertise" && (
+                <div
+                  className={cn(
+                    "absolute left-[-400px] rounded-b-md top-[55px] w-[1020px] bg-white text-black shadow-lg py-6 px-10"
+                  )}
+                >
+                  <div className="mx-auto max-w-7xl">
+                    <h2 className="text-lg font-medium mb-4">Expertise</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700">
+                      <p>Strategy Consulting</p>
+                      <p>Market Analysis</p>
+                      <p>Brand Management</p>
+                      <p>Technology Advisory</p>
+                    </div>
+                  </div>
+                </div>
+              )}
             </NavigationMenuItem>
+
+            {/* Insights */}
             <NavigationMenuItem>
               <Link href="/insights" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
-                    "hover:font-semibold hover:text-white font-normal  text-[16px]",
-                    isScrolled && "hover:text-black hover:font-semibold font-normal text-[16px] "
+                    "hover:font-semibold hover:text-white font-normal text-[16px]",
+                    isScrolled && "hover:text-black hover:font-semibold"
                   )}
                 >
                   Insights
@@ -105,15 +175,15 @@ export default function CustomNavbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
-       
+        {/* Right Actions */}
         <div className="hidden lg:flex items-center space-x-4">
           <Link href="/contact" legacyBehavior>
             <a
               className={cn(
-                "px-5 py-3 rounded-[60px] border-2 hover:bg-green-200 hover:text-black tracking-[1px] font-medium leading-5",
+                "px-5 py-3 rounded-[60px] border-2 hover:bg-white hover:border-gray-900 hover:text-black tracking-[1px] font-medium leading-3",
                 isScrolled
                   ? "bg-transparent text-black border-gray-700"
-                  : "bg-gray-400 bg-opacity-10  border-white"
+                  : "bg-gray-100 bg-opacity-20 border-white"
               )}
             >
               Browse Jobs
@@ -122,7 +192,7 @@ export default function CustomNavbar() {
           <Link href="/contact" legacyBehavior>
             <a
               className={cn(
-                "px-5 py-3 rounded-3xl hover:bg-green-500 tracking-[1px] font-semibold leading-5",
+                "px-5 py-3 rounded-3xl hover:bg-green-900 hover:border-white border-transparent tracking-[2px] font-semibold",
                 isScrolled ? "bg-[#026534] text-white" : "bg-[#026534] text-white"
               )}
             >
@@ -131,13 +201,13 @@ export default function CustomNavbar() {
           </Link>
         </div>
 
-     
+        {/* Mobile Hamburger */}
         <div className="lg:hidden">
           <Link href="/" legacyBehavior>
             <Image
               src={isScrolled ? '/HamBlack.svg' : '/HamWhite.svg'}
               alt="ham-burger"
-              width={40} 
+              width={40}
               height={40}
             />
           </Link>
@@ -146,25 +216,3 @@ export default function CustomNavbar() {
     </nav>
   );
 }
-
-const ListItem = React.forwardRef(({ title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";

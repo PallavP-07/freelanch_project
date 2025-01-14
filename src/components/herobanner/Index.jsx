@@ -5,7 +5,7 @@ const HeroBanner = () => {
   return (
     <>
       <NavigationMenuDemo />
-      <div className="relative w-full h-[60vh] md:h-[40vh] lg:h-[75vh]">
+      <div className="relative w-full h-[60vh] md:h-[40vh] lg:h-[560px]">
 
         <Image
           className="w-full h-100 object-contain"
@@ -16,7 +16,7 @@ const HeroBanner = () => {
         />
 
 
-        <div className="bg-gradient-to-r  from-zinc-600 via-black opacity-90 to-zinc-600 absolute inset-0 flex items-center justify-center text-white text-center">
+        <div className="bg-gradient-to-r from-black/50 via-black/80 to-black/50 absolute inset-0 flex items-center justify-center text-white text-center">
           <div className="flex flex-wrap w-[600px] p-3 sm:w-[600px] md:w-[700px]  xl:w-[800px] flex-col items-center justify-center">
 
             <h1 className="border-b font-normal tracking-[5px] border-white w-full pb-8 text-[55px] md:text-[76px] leading-[65px] sm:text-3xl md:text-4xl ">

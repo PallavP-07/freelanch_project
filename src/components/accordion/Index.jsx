@@ -111,14 +111,14 @@ export default function CategoryList() {
                     </h2>
 
                 </div>
-                <div className=" min-h-screen text-[#01331A] p-4 sm:p-6 lg:p-4">
+                <div className=" min-h-screen text-[#01331A]  p-4 sm:p-6 lg:p-4">
                     <div className="max-w-5xl mx-auto space-y-2">
                         {categories.map((category, index) => (
                             <div
                                 key={index}
                                 className="flex gap-6 md:gap-2  items-center justify-between py-4 space-y-4 sm:space-y-0"
                             >
-                                <div className="">
+                                <div className=" ">
                                     <h2 className=" leading-6 text-xl font-semibold border-b-2 border-slate-300 pb-3 mb-5 sm:mb-3 w-full sm:w-80">
                                         {category.title}
                                     </h2>
